@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f7f6cd19dad4416a1ff641231d70696" Name="Diagram1">
+        <EntityTypeShape EntityType="PharmacyModel.Buyers" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Drugs" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Recipes" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Sales" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Sellers" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="PharmacyModel.FK_Recipes_Buyers" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Sales_Buyers" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Recipes_Drugs" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Sales_Recipes" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK_Sales_Sellers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

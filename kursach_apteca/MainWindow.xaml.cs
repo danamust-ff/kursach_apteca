@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,15 +24,23 @@ namespace kursach_apteca
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Medicines_Page());
+            MainFrame.Navigate(new AuthSellersPage());
             Manager.MainFrame = MainFrame;
         }
 
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
-
+            if (MainFrame.CanGoBack)
+                ButtonBack.Visibility = Visibility.Visible;
+            else
+                ButtonBack.Visibility = Visibility.Hidden;
         }
 
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+                MainFrame.GoBack();
+        }
     }
 
 }

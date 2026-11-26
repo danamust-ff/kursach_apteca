@@ -4,18 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kursach_apteca"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="900" >
+        mc:Ignorable="d" 
+        Title="MainWindow" WindowState="Maximized" FontFamily="Times New Roman" Background="#F3E5F5">
+
+
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60" />
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#F3E5F5">
-            <TextBlock Text="Аптека" Grid.Row="0" FontSize="30" HorizontalAlignment="Center"></TextBlock>
-        </Border>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="70,0,0,0" >
+            <TextBlock Text="Аптека+" Grid.Row="0" FontSize="30" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Text="Рабочее место фармацевта" FontStyle="Italic" Grid.Row="0" FontSize="15" HorizontalAlignment="Left" />
+        </StackPanel>
         <Image Source="/res/logo_apteca.png" Grid.Row="0"  Width="60" HorizontalAlignment="Left"></Image>
         <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" ></Frame>
+        <Button Content="Назад" Name="ButtonBack" Click="ButtonBack_Click" Width="110" FontSize="20" Height="35" HorizontalAlignment="Right" Background="#AB47BC" VerticalAlignment="Top" Visibility="Hidden" Margin="10" />
     </Grid>
 </Window>

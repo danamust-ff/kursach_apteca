@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -35,13 +35,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Compile Include="AddNewBuyersPage.xaml.cs">
+      <DependentUpon>AddNewBuyersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewDrugPage.xaml.cs">
+      <DependentUpon>AddNewDrugPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthSellersPage.xaml.cs">
+      <DependentUpon>AuthSellersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BestBeforDatePage.xaml.cs">
+      <DependentUpon>BestBeforDatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -62,30 +84,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="addEditPage.xaml.cs">
-      <DependentUpon>addEditPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Buyers.cs">
-      <DependentUpon>Pharmacy_Model1.tt</DependentUpon>
+      <DependentUpon>PharmacyModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Drugs.cs">
-      <DependentUpon>Pharmacy_Model1.tt</DependentUpon>
+      <DependentUpon>PharmacyModel1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pharmacy_Model1.cs">
+    <Compile Include="PharmacyModel1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Pharmacy_Model1.tt</DependentUpon>
+      <DependentUpon>PharmacyModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Recipes.cs">
-      <DependentUpon>Pharmacy_Model1.tt</DependentUpon>
+      <DependentUpon>PharmacyModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Sales.cs">
-      <DependentUpon>Pharmacy_Model1.tt</DependentUpon>
+      <DependentUpon>PharmacyModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Sellers.cs">
-      <DependentUpon>Pharmacy_Model1.tt</DependentUpon>
+      <DependentUpon>PharmacyModel1.tt</DependentUpon>
     </Compile>
-    <Page Include="addEditPage.xaml">
+    <Page Include="AddNewBuyersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewDrugPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthSellersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BestBeforDatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,15 +142,15 @@
     <Compile Include="Medicines_Page.xaml.cs">
       <DependentUpon>Medicines_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pharmacy_Model1.Context.cs">
+    <Compile Include="PharmacyModel1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Pharmacy_Model1.Context.tt</DependentUpon>
+      <DependentUpon>PharmacyModel1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pharmacy_Model1.Designer.cs">
+    <Compile Include="PharmacyModel1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Pharmacy_Model1.edmx</DependentUpon>
+      <DependentUpon>PharmacyModel1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -138,13 +169,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Pharmacy_Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Pharmacy_Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="Pharmacy_Model1.edmx.diagram">
-      <DependentUpon>Pharmacy_Model1.edmx</DependentUpon>
+    <EntityDeploy Include="PharmacyModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PharmacyModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PharmacyModel1.edmx.diagram">
+      <DependentUpon>PharmacyModel1.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -152,25 +184,40 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Pharmacy_Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Pharmacy_Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Pharmacy_Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Pharmacy_Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Pharmacy_Model1.edmx</DependentUpon>
-      <LastGenOutput>Pharmacy_Model1.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="res\logo_apteca.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="PharmacyModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmacyModel1.edmx</DependentUpon>
+      <LastGenOutput>PharmacyModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PharmacyModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmacyModel1.edmx</DependentUpon>
+      <LastGenOutput>PharmacyModel1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Page Include="DrugDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="DrugDetailsPage.xaml.cs">
+      <DependentUpon>DrugDetailsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SalesDrug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="SalesDrug.xaml.cs">
+      <DependentUpon>SalesDrug.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
